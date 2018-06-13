@@ -1,8 +1,15 @@
 .App {
-  text-align: center;
+  width: 100%;
 }
 
-.pixel {
-  width: 1px;
-  height: 1px;
+.App-body {
+  display: flex;
+}
+
+.App-menu {
+  width: 100%;
+}
+
+.App-toolbar {
+  flex: 0 0 120px;
 }

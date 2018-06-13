@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classnames from 'classnames';
 import './Canvas.css';
 
 class Canvas extends Component {
@@ -28,7 +29,7 @@ class Canvas extends Component {
     return (
       <canvas
         ref={ node => { this.canvasRef = node } }
-        style={ { backgroundColor: '#f5f4f0' } }
+        className={ classnames('Canvas', this.props.className) }
       />
     );
   }
