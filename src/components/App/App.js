@@ -1,7 +1,12 @@
+// Libs
 import React, { Component } from 'react';
-import Canvas from '../Canvas/Canvas';
-import Menu from '../Menu/Menu';
-import Toolbar from '../Toolbar/Toolbar';
+
+// Components
+import Canvas from 'components/Canvas';
+import Menu from 'components/Menu';
+import Toolbar from 'components/Toolbar';
+
+// CSS
 import './App.css';
 
 class App extends Component {

@@ -1,6 +1,8 @@
+// Libs
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { getColorIndicesForCoord } from '../../utils/drawingUtils';
+
+// CSS
 import './Canvas.css';
 
 class Canvas extends Component {
@@ -26,13 +28,11 @@ class Canvas extends Component {
   render() {
     return (
       <canvas
-        ref={ node => { this.canvasRef = node } }
+        ref={ node => { this.canvasRef = node; } }
         className={ classnames('Canvas', this.props.className) }
       />
     );
   }
 }
-
-window.Canvas = Canvas;
 
 export default Canvas;

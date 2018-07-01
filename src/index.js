@@ -1,8 +1,23 @@
+// Libs
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './components/App/App';
+import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// Components
+import App from 'components/App/App';
+
+// CSS
+import './index.css';
+
+import store from 'store';
+
+// App entry point
+ReactDOM.render(
+  <Provider store={ store }>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
+
 registerServiceWorker();
