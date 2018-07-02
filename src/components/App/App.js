@@ -1,8 +1,10 @@
 // Libs
 import React, { Component } from 'react';
 
+// Containers
+import CanvasContainer from 'containers/CanvasContainer';
+
 // Components
-import Canvas from 'components/Canvas';
 import Menu from 'components/Menu';
 import Toolbar from 'components/Toolbar';
 
@@ -16,7 +18,7 @@ class App extends Component {
         <Menu className="App-menu" />
         <section className="App-body">
           <Toolbar className="App-toolbar" />
-          <Canvas className="App-canvas" width={ 100 } height={ 100 } />
+          <CanvasContainer className="App-canvas" width={ 100 } height={ 100 } />
         </section>
       </main>
     );
