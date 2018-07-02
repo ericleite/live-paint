@@ -8,6 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 import App from 'components/App';
 
 // CSS
+import 'normalize.css';
 import './index.css';
 
 import store from 'store';

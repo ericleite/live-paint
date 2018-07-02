@@ -13,7 +13,10 @@ class Canvas extends Component {
 
   static propTypes = {
     activeColor: PropTypes.object,
-    activeTool: PropTypes.string
+    activeTool: PropTypes.string,
+    className: PropTypes.string,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired
   }
 
   state = {
@@ -72,13 +75,27 @@ class Canvas extends Component {
     return this.state.isMouseClicked;
   }
 
+  resizeCanvas(canvasRef, context2d, width, height) {
+    canvasRef.width = width;
+    canvasRef.height = height;
+    context2d.fillStyle = 'white';
+    context2d.fillRect(0, 0, width, height);
+  }
+
   // React lifecycle
   // ---------------
 
   componentDidMount() {
-    this.canvasRef.width = this.props.width;
-    this.canvasRef.height = this.props.height;
+    const { width, height } = this.props;
     this.context2d = this.canvasRef.getContext('2d');
+    this.resizeCanvas(this.canvasRef, this.context2d, width, height);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { width, height } = this.props;
+    if (width !== prevProps.width || height !== prevProps.height) {
+      this.resizeCanvas(this.canvasRef, this.context2d, width, height);
+    }
   }
 
   render() {
