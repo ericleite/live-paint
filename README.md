@@ -1,4 +1,4 @@
-# Paint
+# Live Paint
 
 Real-time, collaborative drawing in the browser.
 
